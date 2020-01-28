@@ -13,6 +13,8 @@ docker run -p 8085:8080 -e SWAGGER_JSON=/tmp/swagger.yml -v `pwd`:/tmp swaggerap
 
 This will run Swagger Editor (in detached mode) on port 8085 on your machine, so you can open it by navigating to [http://localhost:8085](http://localhost:8085) in your browser.
 
+![header image](https://github.com/fgriberi/car-api/blob/2-add-swagger-api/resources/swagger.png)
+
 ## Docker
 
 For learning purpose, you need to install Docker Community Edition. Select your OS from the list below and follow the setup instructions.
