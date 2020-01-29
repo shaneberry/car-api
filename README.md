@@ -2,13 +2,41 @@
 
 This is a Car API sample application written in Python.
 
+## Environment
+
+As a dependency manager for this project we are using [Pipenv](https://pipenv.readthedocs.io/en/latest/). To install it, please check [this](https://pipenv.kennethreitz.org/en/latest/install/#installing-pipenv) link. To check that Pipenv is installed just run:
+
+```
+$ pipenv --version
+```
+
+### Install dependencies
+
+To create a new python virtual environment and install all the neccessay dependencies there, just run the following command:
+
+```
+$ pipenv install
+```
+
+To activate this project's virtualenv, run `pipenv shell`. If you want to desactivate the virtualenv, just perform `deactivate`. Pipenv creates all your virtual environments in a default location.
+
+## Run the project
+
+To run the project locally we can run the following command:
+
+```
+$ pipenv run python app.py
+```
+
+Then, your Flask docker server instance will be running on [http://localhost:5000](http://localhost:5000).
+
 ## Swagger API Definition
 
 Please execute the following commands to run the Editor in your local machine from Docker.
 
 ```
-docker pull swaggerapi/swagger-editor
-docker run -p 8085:8080 -e SWAGGER_JSON=/tmp/swagger.yml -v `pwd`:/tmp swaggerapi/swagger-ui
+$ docker pull swaggerapi/swagger-editor
+$ docker run -p 8085:8080 -e SWAGGER_JSON=/tmp/swagger.yml -v `pwd`:/tmp swaggerapi/swagger-ui
 ```
 
 This will run Swagger Editor (in detached mode) on port 8085 on your machine, so you can open it by navigating to [http://localhost:8085](http://localhost:8085) in your browser.
