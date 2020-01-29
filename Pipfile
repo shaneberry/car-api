@@ -9,6 +9,13 @@ pytest = "==5.2.0"
 pytest-flask = "*"
 tox = "*"
 coverage = "*"
+sphinx = "*"
+watchdog = "*"
+bumpversion = "*"
+yaml = "*"
+pyyaml = "*"
+yml = "*"
+argh = "*"
 
 [packages]
 flask = "*"
