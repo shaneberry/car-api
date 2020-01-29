@@ -7,6 +7,7 @@ verify_ssl = true
 flake8 = "*"
 pytest = "==5.2.0"
 pytest-flask = "*"
+tox = "*"
 
 [packages]
 flask = "*"
