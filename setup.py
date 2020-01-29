@@ -17,7 +17,7 @@ with open('README.md') as readme_file:
 with open('CHANGELOG.md') as changes:
     changelog = changes.read()
 
-
+# TODO: read dependencies from Pipfile
 requirements = ['flask']
 
 setup_requirements = ['pytest-runner', ]
