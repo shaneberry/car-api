@@ -8,6 +8,7 @@ flake8 = "*"
 pytest = "==5.2.0"
 pytest-flask = "*"
 tox = "*"
+coverage = "*"
 
 [packages]
 flask = "*"
