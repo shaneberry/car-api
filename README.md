@@ -30,6 +30,34 @@ $ pipenv run python app.py
 
 Then, your Flask docker server instance will be running on [http://localhost:5000](http://localhost:5000).
 
+## Makefile commands
+
+There is a [Makefile](https://www.gnu.org/software/make/manual/make.html#toc-An-Introduction-to-Makefiles) that provide us an easy way to run different action around the project. You just need to run:
+
+```
+$ make <action>
+```
+
+All the supported actions are (you can see the list running `$ make help`):
+
+| Action      | Description                                              |
+| :---------- | :------------------------------------------------------- |
+| clean       | remove all build, test, coverage and Python artifacts    |
+| clean-build | remove build artifacts                                   |
+| clean-pyc   | remove Python file artifacts                             |
+| clean-test  | remove test and coverage artifacts                       |
+| lint        | check style with flake8                                  |
+| test        | run tests quickly with the default Python                |
+| test-all    | run tests on every Python version with tox               |
+| coverage    | check code coverage quickly with the default Python      |
+| docs        | generate Sphinx HTML documentation, including API docs   |
+| servedocs   | compile the docs watching for changes                    |
+| release     | package and upload a release                             |
+| dist        | builds source and wheel package                          |
+| install     | install the package to the active Python's site-packages |
+| develop     | install the package as develop                           |
+| uninstall   | uninstall the package                                    |
+
 ## Swagger API Definition
 
 Please execute the following commands to run the Editor in your local machine from Docker.
@@ -47,9 +75,9 @@ This will run Swagger Editor (in detached mode) on port 8085 on your machine, so
 
 For learning purpose, you need to install Docker Community Edition. Select your OS from the list below and follow the setup instructions.
 
-- [Mac OS](https://docs.docker.com/docker-for-mac/install/)
-- [Windows](https://docs.docker.com/docker-for-windows/install/)
-- [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
-- [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
-- [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
+-   [Mac OS](https://docs.docker.com/docker-for-mac/install/)
+-   [Windows](https://docs.docker.com/docker-for-windows/install/)
+-   [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+-   [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+-   [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
+-   [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
