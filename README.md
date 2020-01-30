@@ -81,3 +81,7 @@ For learning purpose, you need to install Docker Community Edition. Select your 
 -   [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
 -   [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
 -   [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
+
+## TODO's
+
+-   setup Travis integration
