@@ -79,9 +79,6 @@ servedocs: docs ## compile the docs watching for changes
 release: dist ## package and upload a release
 	twine upload dist/*
 
-executable:
-	pyinstaller --name car_api car_api/cli.py
-
 dist: clean ## builds source and wheel package
 	python setup.py sdist
 	python setup.py bdist_wheel
@@ -89,3 +86,9 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+develop: clean ## install the package as develop
+	python setup.py develop
+
+uninstall: ## uninstall the package
+	pip uninstall car-api
