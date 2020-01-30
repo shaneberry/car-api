@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Integrate CHANGELOG
-- add test cases setup
-- add flask base application
-- add swagger api definition
+-   integrate Makefile support (test, coverage, docs)
+-   Integrate CHANGELOG
+-   add test cases setup
+-   add flask base application
+-   add swagger api definition
