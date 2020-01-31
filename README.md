@@ -30,6 +30,8 @@ $ pipenv run python app.py
 
 Then, your Flask docker server instance will be running on [http://localhost:5000](http://localhost:5000).
 
+The swagger Car API will be running on [http://localhost:5000/ui](http://localhost:5000/ui).
+
 ## Makefile commands
 
 There is a [Makefile](https://www.gnu.org/software/make/manual/make.html#toc-An-Introduction-to-Makefiles) that provide us an easy way to run different action around the project. You just need to run:

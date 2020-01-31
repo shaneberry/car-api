@@ -1,0 +1,336 @@
+openapi: "3.0.0"
+
+info:
+    version: 1.0.0
+    title: Swagger Car API Documentation
+    description: A sample OpenAPI Car Specification
+    termsOfService: http://swagger.io/terms/
+    contact:
+        name: Car API Support
+        email: fgriberi@gmail.com
+    license:
+        name: Apache 2.0
+        url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+    - url: http://localhost:5000/
+
+tags:
+    - name: cars
+      description: Find out about the Car sets
+
+paths:
+    /cars:
+        get:
+            tags:
+                - cars
+            description: Returns all stored cars
+            operationId: car.find_all
+            parameters:
+                - name: tags
+                  in: query
+                  description: tags to filter by
+                  required: false
+                  style: form
+                  schema:
+                      type: array
+                      items:
+                          type: string
+                - name: limit
+                  in: query
+                  description: maximum number of results to return
+                  required: false
+                  schema:
+                      type: integer
+                      format: int32
+            responses:
+                "200":
+                    description: car response
+                    headers:
+                        x-next:
+                            description: A link to the next page of responses
+                            schema:
+                                type: string
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Car"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+        post:
+            tags:
+                - cars
+            description: Creates a new Car. Duplicates are allowed
+            operationId: car.create
+            requestBody:
+                description: Car to add
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/NewCar"
+            responses:
+                "200":
+                    description: car response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /cars/{id}:
+        get:
+            tags:
+                - cars
+            description: Returns a car based on a single identifier
+            operationId: car.find_by_id
+            parameters:
+                - name: id
+                  in: path
+                  description: ID of car to fetch
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                "200":
+                    description: car response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+        put: # TODO
+            tags:
+                - cars
+            description: Returns a car based on a single identifier
+            operationId: car.update
+            parameters:
+                - name: id
+                  in: path
+                  description: ID of car to fetch
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                "200":
+                    description: car response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+        delete:
+            tags:
+                - cars
+            description: deletes a single car based on the identifier supplied
+            operationId: car.delete
+            parameters:
+                - name: id
+                  in: path
+                  description: ID of car to delete
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                "204":
+                    description: car deleted
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /cars/makes:
+        get:
+            tags:
+                - cars
+            description: Returns all manufacturing brands
+            operationId: car.brands
+            parameters:
+                - name: tags
+                  in: query
+                  description: tags to filter by
+                  required: false
+                  style: form
+                  schema:
+                      type: array
+                      items:
+                          type: string
+                - name: limit
+                  in: query
+                  description: maximum number of results to return
+                  required: false
+                  schema:
+                      type: integer
+                      format: int32
+            responses:
+                "200":
+                    description: car response
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Brand"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /cars/models:
+        get:
+            tags:
+                - cars
+            description: Returns all cars models
+            operationId: car.models
+            parameters:
+                - name: tags
+                  in: query
+                  description: tags to filter by
+                  required: false
+                  style: form
+                  schema:
+                      type: array
+                      items:
+                          type: string
+                - name: limit
+                  in: query
+                  description: maximum number of results to return
+                  required: false
+                  schema:
+                      type: integer
+                      format: int32
+            responses:
+                "200":
+                    description: car response
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Model"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+
+components:
+    schemas:
+        Car:
+            allOf:
+                - $ref: "#/components/schemas/NewCar"
+                - type: object
+                  required:
+                      - id
+                  properties:
+                      id:
+                          type: integer
+                          format: int64
+
+        NewCar:
+            type: object
+            required:
+                - year
+                - make
+                - model
+                - class
+                - cylinders
+                - displacement
+                - drive
+                - fuel_type
+                - transmission
+                - mpg_highway
+                - mpg_city
+                - like
+            properties:
+                year:
+                    type: integer
+                    format: int32
+                    example: 2020
+                make:
+                    type: string
+                    example: Mercedes-Benz
+                model:
+                    type: string
+                    example: CLS450
+                class:
+                    type: string
+                    example: Compact Cars
+                cylinders:
+                    type: integer
+                    format: int32
+                    example: 6
+                displacement:
+                    type: number
+                    format: float
+                    example: 3
+                drive:
+                    type: string
+                    example: Rear-Wheel Drive
+                fuel_type:
+                    type: string
+                    example: Premium
+                transmission:
+                    type: string
+                    example: Automatic 9-spd
+                mpg_highway:
+                    type: integer
+                    format: int32
+                    example: 31
+                mpg_city:
+                    type: integer
+                    format: int32
+                    example: 24
+                like:
+                    type: boolean
+                    example: True
+
+        Brand:
+            type: array
+            items:
+                type: string
+                example: [Volkswagen, Chevrolet, Honda]
+
+        Model:
+            type: array
+            items:
+                type: string
+                example: [Tiguan Limited 4motion, Colorado 2WD]
+
+        Error:
+            type: object
+            required:
+                - code
+                - message
+            properties:
+                code:
+                    type: integer
+                    format: int32
+                message:
+                    type: string
