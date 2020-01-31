@@ -12,7 +12,7 @@ $ pipenv --version
 
 ### Install dependencies
 
-To create a new python virtual environment and install all the neccessay dependencies there, just run the following command:
+To create a new python virtual environment and install all the necessary dependencies there, just run the following command:
 
 ```
 $ pipenv install
