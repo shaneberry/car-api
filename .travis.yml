@@ -4,22 +4,16 @@ language: python
 dist: xenial
 python:
     - "3.7.3"
+    - "3.8.0"
 
 env:
     global:
         - PIPENV_VENV_IN_PROJECT=1
         - PIPENV_IGNORE_VIRTUALENVS=1
 
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+# Command to install dependencies
 install:
-  - pip3 install attrs==19.1.0
-  - pip3 install connexion==2.6.0
-  - pip3 install flask==1.1.1
-  - pip3 install jinja2==2.11.1
-  - pip3 install openapi-spec-validator==0.2.8
   - pip3 install tox==3.14.3
-  - pip3 install pytest==5.2.0
-  - pip3 install pytest-flask==0.15.0
 
-# Command to run tests, e.g. python setup.py test
+# Command to run tests
 script: tox
