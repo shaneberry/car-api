@@ -25,7 +25,7 @@ paths:
             tags:
                 - cars
             description: Returns all stored cars
-            operationId: car.find_all
+            operationId: car_api.car.find_all
             parameters:
                 - name: tags
                   in: query
@@ -67,7 +67,7 @@ paths:
             tags:
                 - cars
             description: Creates a new Car. Duplicates are allowed
-            operationId: car.create
+            operationId: car_api.car.create
             requestBody:
                 description: Car to add
                 required: true
@@ -93,7 +93,7 @@ paths:
             tags:
                 - cars
             description: Returns a car based on a single identifier
-            operationId: car.find_by_id
+            operationId: car_api.car.find_by_id
             parameters:
                 - name: id
                   in: path
@@ -119,7 +119,7 @@ paths:
             tags:
                 - cars
             description: Returns a car based on a single identifier
-            operationId: car.update
+            operationId: car_api.car.update
             parameters:
                 - name: id
                   in: path
@@ -145,7 +145,7 @@ paths:
             tags:
                 - cars
             description: deletes a single car based on the identifier supplied
-            operationId: car.delete
+            operationId: car_api.car.delete
             parameters:
                 - name: id
                   in: path
@@ -168,7 +168,7 @@ paths:
             tags:
                 - cars
             description: Returns all manufacturing brands
-            operationId: car.brands
+            operationId: car_api.car.brands
             parameters:
                 - name: tags
                   in: query
@@ -206,7 +206,7 @@ paths:
             tags:
                 - cars
             description: Returns all cars models
-            operationId: car.models
+            operationId: car_api.car.models
             parameters:
                 - name: tags
                   in: query
