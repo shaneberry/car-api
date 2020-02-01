@@ -23,6 +23,7 @@ flask = "*"
 attrs = "==19.1.0"
 connexion = "*"
 car-api = {editable = true,path = "."}
+pyobjc = "*"
 
 [requires]
 python_version = "3.7.3"
