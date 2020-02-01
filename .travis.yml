@@ -14,7 +14,7 @@ env:
 install:
     - make clean
     - pip install pipenv
-    pipenv install --dev --three
+    - pipenv install --dev --three
 
 # Command to run tests, e.g. python setup.py test
 script: pipenv run tox
