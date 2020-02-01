@@ -1,19 +1,19 @@
 # Config file for automatic testing at travis-ci.org
 
-language: python
 dist: xenial
+language: python
 python:
     - "3.7.3"
     - "3.8.0"
 
-env:
-    global:
-        - PIPENV_VENV_IN_PROJECT=1
-        - PIPENV_IGNORE_VIRTUALENVS=1
+branches:
+  only:
+    - master
+    - develop
 
 # Command to install dependencies
 install:
-  - pip3 install tox==3.14.3
+  - pip3 install tox-travis
 
 # Command to run tests
 script: tox
