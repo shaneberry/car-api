@@ -3,17 +3,18 @@
 language: python
 dist: xenial
 python:
-  - "3.7.3"
+    - "3.7.3"
 
 env:
-  - PIPENV_VENV_IN_PROJECT=1
-  - PIPENV_IGNORE_VIRTUALENVS=1
+    global:
+        - PIPENV_VENV_IN_PROJECT=1
+        - PIPENV_IGNORE_VIRTUALENVS=1
 
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
-  - pip install pipenv
-  - pipenv --three
-  - pipenv install --dev
+    - pip install pyobjc
+    - pip install pipenv
+    - pipenv install --dev --three
 
 # Command to run tests, e.g. python setup.py test
 script: pipenv run tox
