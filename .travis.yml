@@ -13,7 +13,7 @@ env:
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
     - pip3 install pipenv
-    - pipenv install --dev --three
+    - pipenv install --ignore-pipfile
 
 # Command to run tests, e.g. python setup.py test
 script: pipenv run tox
