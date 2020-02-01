@@ -22,6 +22,7 @@ pylint = "*"
 flask = "*"
 attrs = "==19.1.0"
 connexion = "*"
+car-api = {editable = true,path = "."}
 
 [requires]
 python_version = "3.8"

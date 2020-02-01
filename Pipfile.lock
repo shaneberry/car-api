@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b2a4f4eaad708857ab9448d730bdf92b72d289580dd787672fdb10fc87ab3bbf"
+            "sha256": "bb64f25f16f6a8b14ca4815ad00c3554aeb29fc4a577cfe8f22162c8b2b76278"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,10 @@
             ],
             "index": "pypi",
             "version": "==19.1.0"
+        },
+        "car-api": {
+            "editable": true,
+            "path": "."
         },
         "certifi": {
             "hashes": [
