@@ -21,7 +21,7 @@ pylint = "*"
 [packages]
 flask = "*"
 attrs = "==19.1.0"
-connexion = "*"
+connexion = {extras = ["swagger-ui"],version = "*"}
 gunicorn = "*"
 
 [requires]
