@@ -1,2 +1,2 @@
-web gunicorn car_api:app
+web gunicorn --bind 0.0.0.0:5000 car_api.app:app
 
