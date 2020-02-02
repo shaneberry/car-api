@@ -22,7 +22,6 @@ pylint = "*"
 flask = "*"
 attrs = "==19.1.0"
 connexion = {extras = ["swagger-ui"],version = "*"}
-gunicorn = "*"
 
 [requires]
 python_version = "3.7.3"
