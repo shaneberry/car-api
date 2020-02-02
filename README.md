@@ -1,5 +1,7 @@
 # Car API sample project
 
+[![Build Status](https://travis-ci.org/ogli-api/car-api.svg?branch=master)](https://travis-ci.org/ogli-api/car-api)
+
 This is a Car API sample application written in Python.
 
 ## Environment
