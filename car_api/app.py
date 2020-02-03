@@ -40,13 +40,11 @@ def configure_apispec(app):
     app.add_api("swagger.yml")
 
 
-def main():
-    """
-    Main entry point
-    """
-    app = create_app()
-    app.run(debug=True)
+app = create_app()
 
 
 if __name__ == '__main__':
-    main()
+    """
+    Main entry point
+    """
+    app.run(debug=True)
