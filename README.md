@@ -86,6 +86,30 @@ For learning purpose, you need to install Docker Community Edition. Select your 
 -   [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
 -   [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
 
-## TODO's
+## Heroku Deploy
 
--   setup Travis integration
+For deploy purpose, there is a branch called `heroku-deploy`. All `master` changes should be moved to this branch before a new deploy.
+
+### Step 1: Install the Heroku CLI
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli). If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+```
+$ heroku login
+```
+
+### Step 2: add remote to heroku
+
+```
+$ heroku git:remote -a heroku-car-api
+```
+
+### Step 3: Deploy your changes
+
+```
+$ git co heroku-deploy
+$ git merge master
+$ git push heroku heroku-deploy:master
+```
+
+If there aren't errors, you should be able to see your server running on: [https://heroku-car-api.herokuapp.com/](https://heroku-car-api.herokuapp.com/). The swagger API will be available on [https://heroku-car-api.herokuapp.com/ui/](https://heroku-car-api.herokuapp.com/ui/).
